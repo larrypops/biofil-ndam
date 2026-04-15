@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Zap, ShieldCheck, Settings, ShoppingBag, Phone, Home as HomeIcon, Building2, Wrench } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const features = [
   {
@@ -56,9 +57,9 @@ const quickServices = [
 
 const productPreview = [
   { name: "Générateurs Hybrides", image: "/images/generateur-hybride-3000w.jpg" },
-  { name: "Batteries Lithium", image: "/images/batteries-lithium.png" },
-  { name: "Panneaux Solaires", image: "/images/panneaux-solaires.png" },
-  { name: "Onduleurs", image: "/images/onduleurs.png" },
+  { name: "Batteries Lithium", image: "/images/batteries-lithium.jpg" },
+  { name: "Panneaux Solaires", image: "/images/panneaux-solaires.jpg" },
+  { name: "Onduleurs", image: "/images/onduleurs.jpg" },
 ];
 
 export default function Home() {
@@ -67,9 +68,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/hero-background.png"
+          <Image
+            src="/images/hero-background.jpg"
             alt="Solar Panels"
+            fill
+            priority
+            sizes="100vw"
+            quality={74}
             className="w-full h-full object-cover brightness-[0.4]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-solar-dark/80 to-transparent"></div>
@@ -211,9 +216,12 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 className="relative aspect-[4/5] rounded-3xl overflow-hidden group"
               >
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  quality={72}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-solar-dark to-transparent opacity-80"></div>

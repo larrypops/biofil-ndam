@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { Target, Users, Award, ShieldCheck } from 'lucide-react';
 
 const stats = [
@@ -36,9 +37,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
-              <img
+              <Image
                 src="/images/equipe.jpg"
                 alt="Ado Solar Team"
+                width={816}
+                height={954}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={76}
                 className="w-full h-auto rounded-3xl shadow-2xl"
               />
               <div className="absolute -bottom-8 -right-8 bg-solar-orange p-8 rounded-3xl text-white hidden md:block">

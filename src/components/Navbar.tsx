@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -37,9 +38,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2 group">
-            <img
+            <Image
               src="/images/logo.png"
               alt="Logo Ado Solar Energy"
+              width={320}
+              height={291}
+              priority
+              sizes="(max-width: 768px) 96px, 128px"
               className="h-12 w-auto rounded-lg bg-white p-1 shadow-sm"
             />
             <span className={cn(

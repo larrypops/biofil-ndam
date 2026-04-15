@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import Image from 'next/image';
 import { ShoppingCart, Zap, Battery, Sun, RefreshCw, Filter } from 'lucide-react';
 
 const categories = [
@@ -19,15 +20,15 @@ const products = [
   { id: 3, category: 'generators', name: 'Générateur Hybride 3000W', power: '3000W', desc: 'Puissance industrielle pour entreprises et grandes maisons.', features: ['Triphasé disponible', 'Monitoring intelligent', 'Garantie 5 ans'], image: '/images/generateur-hybride-3000w.jpg' },
   
   // Panneaux Solaires
-  { id: 4, category: 'panels', name: 'Panneau Solaire Mono 450W', power: '450W', desc: 'Panneaux haute performance pour particuliers et entreprises.', features: ['Cellules Monocristallines', 'Résistant aux intempéries', 'Rendement 21%'], image: '/images/panneaux-solaires.png' },
-  { id: 5, category: 'panels', name: 'Kit Solaire Résidentiel', power: 'Variable', desc: 'Ensemble complet prêt à l\'emploi.', features: ['Supports inclus', 'Câblage fourni', 'Installation guidée'], image: '/images/panneaux-solaires.png' },
+  { id: 4, category: 'panels', name: 'Panneau Solaire Mono 450W', power: '450W', desc: 'Panneaux haute performance pour particuliers et entreprises.', features: ['Cellules Monocristallines', 'Résistant aux intempéries', 'Rendement 21%'], image: '/images/panneaux-solaires.jpg' },
+  { id: 5, category: 'panels', name: 'Kit Solaire Résidentiel', power: 'Variable', desc: 'Ensemble complet prêt à l\'emploi.', features: ['Supports inclus', 'Câblage fourni', 'Installation guidée'], image: '/images/panneaux-solaires.jpg' },
   
   // Onduleurs
-  { id: 6, category: 'inverters', name: 'Onduleur Pur Sinus 3KVA', power: '3KVA', desc: 'Conversion efficace pour alimentation stable.', features: ['Protection surtension', 'Écran LCD', 'Mode éco'], image: '/images/onduleurs.png' },
+  { id: 6, category: 'inverters', name: 'Onduleur Pur Sinus 3KVA', power: '3KVA', desc: 'Conversion efficace pour alimentation stable.', features: ['Protection surtension', 'Écran LCD', 'Mode éco'], image: '/images/onduleurs.jpg' },
   
   // Batteries
-  { id: 7, category: 'batteries', name: 'Batterie Lithium 100Ah', power: '100Ah', desc: 'Stockage d\'énergie durable et sécurisé.', features: ['Longue durée de vie', 'Charge rapide', 'Léger'], image: '/images/batteries-lithium.png' },
-  { id: 8, category: 'batteries', name: 'Batterie Lithium 200Ah', power: '200Ah', desc: 'Capacité maximale pour autonomie prolongée.', features: ['BMS intégré', 'Sans entretien', 'Haute densité'], image: '/images/batteries-lithium.png' },
+  { id: 7, category: 'batteries', name: 'Batterie Lithium 100Ah', power: '100Ah', desc: 'Stockage d\'énergie durable et sécurisé.', features: ['Longue durée de vie', 'Charge rapide', 'Léger'], image: '/images/batteries-lithium.jpg' },
+  { id: 8, category: 'batteries', name: 'Batterie Lithium 200Ah', power: '200Ah', desc: 'Capacité maximale pour autonomie prolongée.', features: ['BMS intégré', 'Sans entretien', 'Haute densité'], image: '/images/batteries-lithium.jpg' },
 ];
 
 export default function Products() {
@@ -95,9 +96,12 @@ export default function Products() {
                   className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all group flex flex-col"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src={product.image}
                       alt={product.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={72}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold text-solar-orange shadow-sm">

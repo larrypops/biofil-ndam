@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Send, MessageSquare } from 'lucide-react';
 
 export default function Contact() {
@@ -163,9 +164,12 @@ export default function Contact() {
 
       {/* Map Placeholder */}
       <section className="h-96 bg-gray-200 relative overflow-hidden">
-        <img
-          src="/images/hero-background.png"
+        <Image
+          src="/images/hero-background.jpg"
           alt="Map"
+          fill
+          sizes="100vw"
+          quality={70}
           className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 flex items-center justify-center">

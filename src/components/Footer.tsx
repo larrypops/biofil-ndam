@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function Footer() {
@@ -9,9 +10,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <img
+              <Image
                 src="/images/logo.png"
                 alt="Logo Ado Solar Energy"
+                width={320}
+                height={291}
+                sizes="112px"
                 className="h-14 w-auto rounded-lg bg-white p-1 shadow-sm"
               />
               <span className="text-xl font-display font-extrabold tracking-tight">
