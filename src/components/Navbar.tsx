@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const navLinks = [
@@ -37,9 +37,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-solar-orange p-2 rounded-lg group-hover:rotate-12 transition-transform">
-              <Sun className="w-6 h-6 text-white" />
-            </div>
+            <img
+              src="/images/logo.png"
+              alt="Logo Ado Solar Energy"
+              className="h-12 w-auto rounded-lg bg-white p-1 shadow-sm"
+            />
             <span className={cn(
               "text-xl font-display font-extrabold tracking-tight",
               scrolled ? "text-solar-dark" : "text-solar-dark lg:text-white"

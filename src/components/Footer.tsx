@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sun, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,10 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="bg-solar-orange p-2 rounded-lg">
-                <Sun className="w-6 h-6 text-white" />
-              </div>
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="/images/logo.png"
+                alt="Logo Ado Solar Energy"
+                className="h-14 w-auto rounded-lg bg-white p-1 shadow-sm"
+              />
               <span className="text-xl font-display font-extrabold tracking-tight">
                 ADO SOLAR <span className="text-solar-orange">ENERGY</span>
               </span>
